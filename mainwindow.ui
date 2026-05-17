@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextEdit" name="telang0">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>35</y>
+      <width>781</width>
+      <height>261</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="telang1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>781</width>
+      <height>256</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>5</y>
+      <width>781</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QComboBox" name="cblang0">
+       <property name="modelColumn">
+        <number>0</number>
+       </property>
+       <item>
+        <property name="text">
+         <string>Chinese</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Czech</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Dutch</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>English</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Estonian</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Finnish</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>French</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>German</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Greek</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Italian</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Japanese</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Korean</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Latin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Polish</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Portughese</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Russian</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Serbian</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Slovak</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Spanish</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Svedish</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Turkish</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ukrainian</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="tbswap">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset theme="QIcon::ThemeIcon::MediaPlaylistRepeat"/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cblang1"/>
+     </item>
+     <item>
+      <widget class="QToolButton" name="toolButton">
+       <property name="text">
+        <string>Go</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>tbswap</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>swapclick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>133</x>
+     <y>23</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toolButton</sender>
+   <signal>released()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>goclick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>277</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>swapclick()</slot>
+  <slot>goclick()</slot>
+ </slots>
+</ui>

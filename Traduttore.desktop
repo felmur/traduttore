@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Traduttore
+Exec=/usr/bin/traduttore
+Icon=traduttore/icon.png
+Categories=Office;Utility
+Terminal=false
+Type=Application
+StartupNotify=false
+Comment=Easy translator
+GenericName=Traduttore
