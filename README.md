@@ -11,5 +11,5 @@ make
 
 sudo make install
 
-Done.
+Done && Enjoy.
 
