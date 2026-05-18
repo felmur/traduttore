@@ -23,6 +23,8 @@ public slots:
     void procReadyRead(void);
     void procReadyReadError(void);
     QString getlangid(QString lang);
+    void copyresultsclick(void);
+    void lang1changed(void);
 
 private:
     Ui::MainWindow *ui;

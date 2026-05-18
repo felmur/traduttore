@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QFile>
 #include <QDir>
+#include <QClipboard>
 
 #include <iostream>
 using namespace std;
@@ -14,10 +15,11 @@ char *deflang0=(char *)"Italian";
 char *deflang1=(char *)"English";
 
 QString prgname = "Traduttore";
-QString version = (char *)"1.0a";
+QString version = (char *)"1.1a";
 QString email = (char *)"linuxboy@fel.hopto.org";
 QString location = (char *)"Salerno - Italia";
 QString copyright = (char *)"(c) 2026 by Felice Murolo - All rights reserved";
+QClipboard *clipboard = NULL;
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -29,7 +31,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->setupUi(this);
 
+    clipboard = QGuiApplication::clipboard();
+
     setWindowTitle(prgname+" v"+version+" - "+copyright);
+    setWindowIcon(QIcon(":/img/icon"));
+
 
     QStringList ii;
     for (int i = 0; i < ui->cblang0->count(); ++i) {
@@ -39,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->cblang0->setCurrentText(deflang0);
     ui->cblang1->setCurrentText(deflang1);
+    ui->tbcopy->setEnabled(false);
 
     QFile f(QDir::homePath()+"/.traduttore.cfg");
     if (f.open(QFile::ReadOnly)){
@@ -92,7 +99,7 @@ void MainWindow::procReadyRead()
 {
     ui->telang1->clear();
     QByteArray data = p->readAllStandardOutput();
-    ui->telang1->append(data);
+    ui->telang1->appendPlainText(data);
 }
 
 void MainWindow::procReadyReadError()
@@ -126,4 +133,18 @@ QString MainWindow::getlangid(QString lang)
     if (lang == "Turkish") return "tr";
     if (lang == "Ukrainian") return "uk";
     return "";
+}
+
+void MainWindow::copyresultsclick()
+{
+    if (ui->telang1->toPlainText().length()){
+        clipboard->setText(ui->telang1->toPlainText());
+    }
+}
+
+void MainWindow::lang1changed()
+{
+    if (ui->telang1->toPlainText().length()){
+        ui->tbcopy->setEnabled(true);
+    }
 }
